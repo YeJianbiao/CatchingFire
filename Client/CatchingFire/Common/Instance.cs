@@ -12,6 +12,8 @@
 
 
 
+
+
 namespace CatchingFire.Common
 {
     public class Instance
