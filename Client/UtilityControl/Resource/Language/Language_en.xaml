@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="Login">Login</sys:String>
+    <sys:String x:Key="Logining">Logining...</sys:String>
+    <sys:String x:Key="Account">Account</sys:String>
+    <sys:String x:Key="Password">Password</sys:String>
+    <sys:String x:Key="Input_Account">Please put your account</sys:String>
+    <sys:String x:Key="Input_Password">Please put your password</sys:String>
+    <sys:String x:Key="Login_Failed">Account Or Password error</sys:String>
+    <sys:String x:Key="Change_Password">Change password</sys:String>
+    <sys:String x:Key="System_Name">Any Office</sys:String>
+    <sys:String x:Key="Remember_Password">Remember Password</sys:String>
+    <sys:String x:Key="Auto_Logon">Automatic logon</sys:String>
+
+    <sys:String x:Key="Base_Info">Base Info</sys:String>
+    <sys:String x:Key="System_Manager">System Manager</sys:String>
+    <sys:String x:Key="Company_Crganizational_Structure">Crganizational Strucature</sys:String>
+    <sys:String x:Key="Employee_Info">Elployee</sys:String>
+    <sys:String x:Key="Authority">Authority</sys:String>
+    <sys:String x:Key="Task_Manager">Task Manager</sys:String>
+    <sys:String x:Key="Task_Report">Task Report</sys:String>
+
+    <sys:String x:Key="Technology_Summarize">Technology Sum</sys:String>
+
+    <sys:String x:Key="Message">Message</sys:String>
+</ResourceDictionary>

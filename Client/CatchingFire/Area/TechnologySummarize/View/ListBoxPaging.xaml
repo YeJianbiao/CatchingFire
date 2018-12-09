@@ -1,0 +1,57 @@
+﻿<Page x:Class="CatchingFire.Area.TechnologySummarize.View.ListBoxPaging"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:common="clr-namespace:CatchingFire.Common"
+      xmlns:system="clr-namespace:System;assembly=mscorlib"
+      xmlns:control="clr-namespace:UtilityControl.Control;assembly=UtilityControl"
+      Height="600" Width="900">
+    <Page.Resources>
+        <ObjectDataProvider x:Key="DataProvider" ObjectType="{x:Type common:LoadVmHelper}" MethodName="LoadVm">
+            <ObjectDataProvider.MethodParameters>
+                <system:String>CatchingFire.Area.TechnologySummarize.ViewModel.ListBoxPagingViewModel</system:String>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox Background="White" ItemsSource="{Binding Source={StaticResource DataProvider},Path=VM.Collection}" Style="{StaticResource DefaultListBox}" >
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <control:WrapCanvas PageCount="{Binding PageCount}"  ></control:WrapCanvas>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="50" Height="50">
+                        <Border BorderBrush="Gray" Background="#F5DEC5">
+                            <TextBlock Text="{Binding }" Margin="5"></TextBlock>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <Grid Grid.Row="1">
+            <ListBox Background="White" ItemsSource="{Binding Source={StaticResource DataProvider},Path=VM.Pages}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <control:WrapCanvas CurrentPage="{Binding CurrentPage}" PageCount="{Binding PageCount}"  ></control:WrapCanvas>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Border BorderBrush="Gray" Background="#E4B37E">
+                                <TextBlock Text="{Binding Index}" Margin="2"></TextBlock>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+        
+    </Grid>
+</Page>

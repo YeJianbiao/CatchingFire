@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include $(var.SolutionDir)/CatchingFireSetup/Define.wxi?>
+  
+	<Product Id="$(var.ProductId)" Name="$(var.ProductName)" Language="2052" Version="1.0.0.0" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)">
+		<Package InstallerVersion="405" Compressed="yes" AdminImage="yes" InstallScope="perMachine" />
+
+    <Media Id="1" Cabinet="cab1.cab" EmbedCab="yes" DiskPrompt="CD-ROM #1"/>
+    <Property Id="DiskPrompt" Value="$(var.Manufacturer)'s $(var.ProductName) 1.0 Installation[1]" />
+    <MajorUpgrade AllowDowngrades="no" AllowSameVersionUpgrades="no" DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <Upgrade Id="$(var.UpgradeCode)">
+      <UpgradeVersion OnlyDetect="no" Property="UPGRADEVERSION" Maximum="$(var.CurrentVersion)" IncludeMaximum="no"/>
+    </Upgrade>
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="CatchingFire" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut"/>
+      <ComponentRef Id="DesktopFolderShortcut"/>
+		</Feature>
+    <Icon Id="logo.ico" SourceFile="$(var.CatchingFire)/logo.ico"/>
+	</Product>
+
+	<Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="$(var.InstallDirName)" />
+      </Directory>
+      <Directory Id="AppliccationProgramsFolder" Name="$(var.InstallDirName)" ></Directory>
+      <Directory Id="DesktopFolder" Name="Desktop" />
+    </Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id="ProductComponent">
+				<File Source="$(var.CatchingFire.TargetPath)"></File>
+			</Component>
+		</ComponentGroup>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLER" ></Property>
+    <UIRef Id="WixUI_InstallDir"/>
+	</Fragment>
+</Wix>

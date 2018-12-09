@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:control="clr-namespace:UtilityControl.Control">
+
+    <Style x:Key="LoadingText" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="TextAlignment" Value="Center"></Setter>
+        <Setter Property="Margin" Value="15,0"></Setter>
+    </Style>
+    
+    <Style x:Key="LoadingControl" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="/UtilityControl;component/Resource/Font/#SF2015"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="TextAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style x:Key="DefaultULoading" TargetType="{x:Type control:ULoadingDialog}">
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Padding" Value="20"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type control:ULoadingDialog}">
+                    <Grid>
+                        <Border CornerRadius="5" Background="#A8000000" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <StackPanel Orientation="{TemplateBinding Orientation}">
+                                <TextBlock x:Name="loadingControl" Text="&#xe65f;" Style="{StaticResource LoadingControl}"></TextBlock>
+                                <TextBlock x:Name="loadingText" Text="{TemplateBinding LoadingText}" Style="{StaticResource LoadingText}"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type control:ULoadingDialog}" BasedOn="{StaticResource DefaultULoading}"></Style>
+</ResourceDictionary>

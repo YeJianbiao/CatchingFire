@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9EE0E0C-F7AD-4899-A7D2-EFCE31DA3AEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtilityControl</RootNamespace>
+    <AssemblyName>UtilityControl</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ControlAttachProperty.cs" />
+    <Compile Include="Common\ControlExtession.cs" />
+    <Compile Include="Common\ControlHelper.cs" />
+    <Compile Include="Common\PasswordBoxBindingHelper.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\WeakAction.cs" />
+    <Compile Include="Common\WeakFunc.cs" />
+    <Compile Include="Control\AutoSearchBox.cs" />
+    <Compile Include="Control\CheckTreeView.cs" />
+    <Compile Include="Control\Image\AnimatedGIF.cs" />
+    <Compile Include="Control\Image\IImageProvider.cs" />
+    <Compile Include="Control\Image\ImageProviderFactory.cs" />
+    <Compile Include="Control\Image\ImageResult.cs" />
+    <Compile Include="Control\Image\LocalImageProvider.cs" />
+    <Compile Include="Control\Image\UImage.cs" />
+    <Compile Include="Control\Image\UnknownImageProvider.cs" />
+    <Compile Include="Control\Image\WebImageProvider.cs" />
+    <Compile Include="Control\ItemsPanel.cs" />
+    <Compile Include="Control\MessageBox.cs" />
+    <Compile Include="Control\MulitFrame.cs" />
+    <Compile Include="Control\PopupExtession.cs" />
+    <Compile Include="Control\Reveal.cs" />
+    <Compile Include="Control\SearchBox.cs" />
+    <Compile Include="Control\Toast.cs" />
+    <Compile Include="Control\TopmostWindow.cs" />
+    <Compile Include="Control\UButton.cs" />
+    <Compile Include="Control\UCheckBox.cs" />
+    <Compile Include="Control\UKeyTextBlock.cs" />
+    <Compile Include="Control\ULoading.cs" />
+    <Compile Include="Control\ULoadingDialog.cs" />
+    <Compile Include="Control\UTabControl.cs" />
+    <Compile Include="Control\UTreeComboBox.cs" />
+    <Compile Include="Control\UTreeListView.cs" />
+    <Compile Include="Control\UTreeView.cs" />
+    <Compile Include="Control\WindowBase.cs" />
+    <Compile Include="Control\WrapCanvas.cs" />
+    <Compile Include="Convert\BackgroundToForegroundConverter.cs" />
+    <Compile Include="Convert\PercentToAngleConverter.cs" />
+    <Compile Include="Convert\ThicknessToDoubleConverter.cs" />
+    <Compile Include="Convert\TreeViewItemMarginLeftConverter.cs" />
+    <Compile Include="Convert\TreeViewMarginConverter.cs" />
+    <Compile Include="Convert\TrueToFalseConverter.cs" />
+    <Compile Include="Convert\XConverter.cs" />
+    <Compile Include="Enum\HorizontalRevealMode.cs" />
+    <Compile Include="Enum\VerticalRevealMode.cs" />
+    <Compile Include="Model\TreeComboBoxNode.cs" />
+    <Compile Include="Model\TreeNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resource\Language\Language_en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\Language\Language_zh-CN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Blue\Color.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Blue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\AutoSearchBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\Calendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\CheckTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\Color.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\Expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\Global.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\MessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\MulitFrame.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\PasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\SearchBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\Separator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\Share.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\Toast.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\UButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\UCheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\UIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\ULoading.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\ULoadingDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\UTreeComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\UTreeListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\UTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\Themes\Default\WindowBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Font\iconfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icon\logo.ico" />
+    <Resource Include="Resource\Icon\logo_01.ico" />
+    <Resource Include="Resource\Icon\logo_02.ico" />
+    <Resource Include="Resource\Icon\logo_03.ico" />
+    <Resource Include="Resource\Image\huoyan_01.jpg" />
+    <Resource Include="Resource\Image\huoyan_02.jpg" />
+    <Resource Include="Resource\Image\huoyan_04.jpg" />
+    <Resource Include="Resource\Image\huoyan_06.jpg" />
+    <Resource Include="Resource\Image\huoyan_07.jpg" />
+    <Resource Include="Resource\Image\huoyan_08.jpg" />
+    <Resource Include="Resource\Image\huoyan_15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Utility\Utility.csproj">
+      <Project>{28fb5e8b-25a6-4920-9569-8102874ce987}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

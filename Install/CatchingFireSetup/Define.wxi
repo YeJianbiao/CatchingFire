@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+	<?define ProductId="*"?>
+  <?define ProductName="CatchingFireSetup"?>
+  <?define CurrentVersion="1.0.0.0"?>
+  <?define Manufacturer="CatchingFire"?>
+  <?define UpgradeCode="c0cde408-6841-439e-9cf1-5f96a68fbff4"?>
+</Include>

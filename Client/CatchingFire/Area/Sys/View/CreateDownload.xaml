@@ -1,0 +1,17 @@
+﻿<control:WindowBase x:Class="CatchingFire.Area.Sys.View.CreateDownload"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:control="clr-namespace:UtilityControl.Control;assembly=UtilityControl"
+        Title="新建" TitleHorizontalAlignment="Center" IconVisibility="Collapsed"    DataContext="{Binding CreateDownloadVM,Source={StaticResource Locator}}" ShowInTaskbar="True" Height="140" Width="500" MaxboxEnable="False" MinboxEnable="False" ResizeMode="NoResize" SizeToContent="WidthAndHeight" MinWidth="500" MinHeight="140" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBlock Text="下载地址 ：" VerticalAlignment="Center" TextAlignment="Right" Width="80" HorizontalAlignment="Left"></TextBlock>
+            <TextBox x:Name="txtUrl" Width="380" Text="http://localhost:1680/download/getFile/SCUzYSU1YyVlOCVhMSU4YyVlOCViZiU5MCU1YyVlNSU4NSVhYiVlNiU5NiViOSVlNSVhZSVhMiVlNiU5ZCVhNS5yYXI1" ></TextBox>
+        </StackPanel>
+        <control:UButton Command="{Binding StartCommand}" CommandParameter="{Binding Text,ElementName=txtUrl}" HorizontalAlignment="Center" Grid.Row="1" Content="下载"></control:UButton>
+    </Grid>
+</control:WindowBase>

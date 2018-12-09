@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <SolidColorBrush x:Key="Foreground" Color="#737373"></SolidColorBrush>
+    <FontFamily x:Key="FontFamily" >Microsoft YaHei</FontFamily>
+    <sys:Double x:Key="FontSize">14</sys:Double>
+    <sys:Double x:Key="IconFontSize">20</sys:Double>
+    <sys:Double x:Key="HeaderFontSize">15</sys:Double>
+    <sys:Double x:Key="ScrollBarSize">12</sys:Double>
+    <sys:Double x:Key="DisableOpacity">0.5</sys:Double>
+    <sys:Double x:Key="ReadonlyOpacity">0.88</sys:Double>
+    <sys:Double x:Key="WatermarkOpacity">0.4</sys:Double>
+    <sys:String x:Key="DateFormat">yyyy年MM月dd日</sys:String>
+    <sys:String x:Key="DateTimeFormat">yyyy-MM-dd HH:mm:ss</sys:String>
+
+    <ImageBrush x:Key="LoginBackground" ImageSource="/UtilityControl;component/Resource/Image/huoyan_04.jpg"/>
+    <ImageBrush x:Key="LogoBackground" ImageSource="/UtilityControl;component/Resource/Icon/logo_01.ico" />
+    <!--<ImageBrush x:Key="MenuBackground" ImageSource="pack://application:,,,/UtilityControl;component/Resource/Image/huoyan_15.jpg" Stretch="UniformToFill" />-->
+
+
+</ResourceDictionary>

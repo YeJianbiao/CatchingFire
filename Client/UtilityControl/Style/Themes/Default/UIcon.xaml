@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--UIcon-->
+    <Style x:Key="UIcon" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="/UtilityControl;component/Resource/Font/#SF2015"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="{DynamicResource IconFontSize}"/>
+    </Style>
+</ResourceDictionary>

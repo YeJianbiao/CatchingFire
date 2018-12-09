@@ -1,0 +1,189 @@
+﻿<Page x:Class="CatchingFire.Area.FontTest.View.FontTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FontTest" >
+    <Grid>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <WrapPanel.Resources>
+                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource UIcon}">
+                    <Setter Property="FontSize" Value="15"></Setter>
+                    <Setter Property="Margin" Value="10"></Setter>
+                </Style>
+            </WrapPanel.Resources>
+            <TextBlock Text="&#xe601;" ToolTip="601" ></TextBlock>
+            <TextBlock Text="&#xe602;" ToolTip="602" ></TextBlock>
+            <TextBlock Text="&#xe603;" ToolTip="603" ></TextBlock>
+            <TextBlock Text="&#xe604;" ToolTip="604" ></TextBlock>
+            <TextBlock Text="&#xe605;" ToolTip="605" ></TextBlock>
+            <TextBlock Text="&#xe606;" ToolTip="606" ></TextBlock>
+            <TextBlock Text="&#xe607;" ToolTip="607" ></TextBlock>
+            <TextBlock Text="&#xe608;" ToolTip="608" ></TextBlock>
+            <TextBlock Text="&#xe609;" ToolTip="609" ></TextBlock>
+
+            <TextBlock Text="&#xe610;" ToolTip="610" ></TextBlock>
+            <TextBlock Text="&#xe611;" ToolTip="611" ></TextBlock>
+            <TextBlock Text="&#xe612;" ToolTip="612" ></TextBlock>
+            <TextBlock Text="&#xe613;" ToolTip="613" ></TextBlock>
+            <TextBlock Text="&#xe614;" ToolTip="614" ></TextBlock>
+            <TextBlock Text="&#xe615;" ToolTip="615" ></TextBlock>
+            <TextBlock Text="&#xe616;" ToolTip="616" ></TextBlock>
+            <TextBlock Text="&#xe617;" ToolTip="617" ></TextBlock>
+            <TextBlock Text="&#xe618;" ToolTip="618" ></TextBlock>
+            <TextBlock Text="&#xe619;" ToolTip="619" ></TextBlock>
+
+            <TextBlock Text="&#xe620;" ToolTip="620" ></TextBlock>
+            <TextBlock Text="&#xe621;" ToolTip="621" ></TextBlock>
+            <TextBlock Text="&#xe622;" ToolTip="622" ></TextBlock>
+            <TextBlock Text="&#xe623;" ToolTip="623" ></TextBlock>
+            <TextBlock Text="&#xe624;" ToolTip="624" ></TextBlock>
+            <TextBlock Text="&#xe625;" ToolTip="625" ></TextBlock>
+            <TextBlock Text="&#xe626;" ToolTip="626" ></TextBlock>
+            <TextBlock Text="&#xe627;" ToolTip="627" ></TextBlock>
+            <TextBlock Text="&#xe628;" ToolTip="628" ></TextBlock>
+            <TextBlock Text="&#xe629;" ToolTip="629" ></TextBlock>
+
+            <TextBlock Text="&#xe630;" ToolTip="630" ></TextBlock>
+            <TextBlock Text="&#xe631;" ToolTip="631" ></TextBlock>
+            <TextBlock Text="&#xe632;" ToolTip="632" ></TextBlock>
+            <TextBlock Text="&#xe633;" ToolTip="633" ></TextBlock>
+            <TextBlock Text="&#xe634;" ToolTip="634" ></TextBlock>
+            <TextBlock Text="&#xe635;" ToolTip="635" ></TextBlock>
+            <TextBlock Text="&#xe636;" ToolTip="636" ></TextBlock>
+            <TextBlock Text="&#xe637;" ToolTip="637" ></TextBlock>
+            <TextBlock Text="&#xe638;" ToolTip="638" ></TextBlock>
+            <TextBlock Text="&#xe639;" ToolTip="639" ></TextBlock>
+
+            <TextBlock Text="&#xe640;" ToolTip="640" ></TextBlock>
+            <TextBlock Text="&#xe641;" ToolTip="641" ></TextBlock>
+            <TextBlock Text="&#xe642;" ToolTip="642" ></TextBlock>
+            <TextBlock Text="&#xe643;" ToolTip="643" FontSize="6" ></TextBlock>
+            <TextBlock Text="&#xe644;" ToolTip="644" ></TextBlock>
+            <TextBlock Text="&#xe645;" ToolTip="645" ></TextBlock>
+            <TextBlock Text="&#xe646;" ToolTip="646" ></TextBlock>
+            <TextBlock Text="&#xe647;" ToolTip="647" ></TextBlock>
+            <TextBlock Text="&#xe648;" ToolTip="648" ></TextBlock>
+            <TextBlock Text="&#xe649;" ToolTip="649" ></TextBlock>
+
+            <TextBlock Text="&#xe650;" ToolTip="650" ></TextBlock>
+            <TextBlock Text="&#xe651;" ToolTip="651" ></TextBlock>
+            <TextBlock Text="&#xe652;" ToolTip="652" ></TextBlock>
+            <TextBlock Text="&#xe653;" ToolTip="653" ></TextBlock>
+            <TextBlock Text="&#xe654;" ToolTip="654" ></TextBlock>
+            <TextBlock Text="&#xe655;" ToolTip="655" ></TextBlock>
+            <TextBlock Text="&#xe656;" ToolTip="656" ></TextBlock>
+            <TextBlock Text="&#xe657;" ToolTip="657" ></TextBlock>
+            <TextBlock Text="&#xe658;" ToolTip="658" ></TextBlock>
+            <TextBlock Text="&#xe659;" ToolTip="659" ></TextBlock>
+
+            <TextBlock Text="&#xe660;" ToolTip="610" ></TextBlock>
+            <TextBlock Text="&#xe661;" ToolTip="661" ></TextBlock>
+            <TextBlock Text="&#xe662;" ToolTip="662" ></TextBlock>
+            <TextBlock Text="&#xe663;" ToolTip="663" ></TextBlock>
+            <TextBlock Text="&#xe664;" ToolTip="664" ></TextBlock>
+            <TextBlock Text="&#xe665;" ToolTip="665" ></TextBlock>
+            <TextBlock Text="&#xe666;" ToolTip="666" ></TextBlock>
+            <TextBlock Text="&#xe667;" ToolTip="667" ></TextBlock>
+            <TextBlock Text="&#xe668;" ToolTip="668" ></TextBlock>
+            <TextBlock Text="&#xe669;" ToolTip="669" ></TextBlock>
+
+            <TextBlock Text="&#xe670;" ToolTip="670" ></TextBlock>
+            <TextBlock Text="&#xe671;" ToolTip="671" ></TextBlock>
+            <TextBlock Text="&#xe672;" ToolTip="672" ></TextBlock>
+            <TextBlock Text="&#xe673;" ToolTip="673" ></TextBlock>
+            <TextBlock Text="&#xe674;" ToolTip="674" ></TextBlock>
+            <TextBlock Text="&#xe675;" ToolTip="675" ></TextBlock>
+            <TextBlock Text="&#xe676;" ToolTip="676" ></TextBlock>
+            <TextBlock Text="&#xe677;" ToolTip="677" ></TextBlock>
+            <TextBlock Text="&#xe678;" ToolTip="678" ></TextBlock>
+            <TextBlock Text="&#xe679;" ToolTip="679" ></TextBlock>
+
+            <TextBlock Text="&#xe680;" ToolTip="680" ></TextBlock>
+            <TextBlock Text="&#xe681;" ToolTip="681" ></TextBlock>
+            <TextBlock Text="&#xe682;" ToolTip="682" ></TextBlock>
+            <TextBlock Text="&#xe683;" ToolTip="683" ></TextBlock>
+            <TextBlock Text="&#xe684;" ToolTip="684" ></TextBlock>
+            <TextBlock Text="&#xe685;" ToolTip="685" ></TextBlock>
+            <TextBlock Text="&#xe686;" ToolTip="686" ></TextBlock>
+            <TextBlock Text="&#xe687;" ToolTip="687" ></TextBlock>
+            <TextBlock Text="&#xe688;" ToolTip="688" ></TextBlock>
+            <TextBlock Text="&#xe689;" ToolTip="689" ></TextBlock>
+
+            <TextBlock Text="&#xe690;" ToolTip="690" ></TextBlock>
+            <TextBlock Text="&#xe691;" ToolTip="691" ></TextBlock>
+            <TextBlock Text="&#xe692;" ToolTip="692" ></TextBlock>
+            <TextBlock Text="&#xe693;" ToolTip="693" ></TextBlock>
+            <TextBlock Text="&#xe694;" ToolTip="694" ></TextBlock>
+            <TextBlock Text="&#xe695;" ToolTip="695" ></TextBlock>
+            <TextBlock Text="&#xe696;" ToolTip="696" ></TextBlock>
+            <TextBlock Text="&#xe697;" ToolTip="697" ></TextBlock>
+            <TextBlock Text="&#xe698;" ToolTip="698" ></TextBlock>
+            <TextBlock Text="&#xe699;" ToolTip="699" ></TextBlock>
+
+            <TextBlock Text="&#xe60a;" ToolTip="60a" ></TextBlock>
+            <TextBlock Text="&#xe61a;" ToolTip="61a" ></TextBlock>
+            <TextBlock Text="&#xe62a;" ToolTip="62a" ></TextBlock>
+            <TextBlock Text="&#xe63a;" ToolTip="63a" ></TextBlock>
+            <TextBlock Text="&#xe64a;" ToolTip="64a" ></TextBlock>
+            <TextBlock Text="&#xe65a;" ToolTip="65a" ></TextBlock>
+            <TextBlock Text="&#xe66a;" ToolTip="66a" ></TextBlock>
+            <TextBlock Text="&#xe67a;" ToolTip="67a" ></TextBlock>
+            <TextBlock Text="&#xe68a;" ToolTip="68a" ></TextBlock>
+            <TextBlock Text="&#xe69a;" ToolTip="69a" ></TextBlock>
+
+            <TextBlock Text="&#xe60b;" ToolTip="60b" ></TextBlock>
+            <TextBlock Text="&#xe61b;" ToolTip="61b" ></TextBlock>
+            <TextBlock Text="&#xe62b;" ToolTip="62b" ></TextBlock>
+            <TextBlock Text="&#xe63b;" ToolTip="63b" ></TextBlock>
+            <TextBlock Text="&#xe64b;" ToolTip="64b" ></TextBlock>
+            <TextBlock Text="&#xe65b;" ToolTip="65b" ></TextBlock>
+            <TextBlock Text="&#xe66b;" ToolTip="66b" ></TextBlock>
+            <TextBlock Text="&#xe67b;" ToolTip="67b" ></TextBlock>
+            <TextBlock Text="&#xe68b;" ToolTip="68b" ></TextBlock>
+            <TextBlock Text="&#xe69b;" ToolTip="69b" ></TextBlock>
+
+            <TextBlock Text="&#xe60c;" ToolTip="60c" ></TextBlock>
+            <TextBlock Text="&#xe61c;" ToolTip="61c" ></TextBlock>
+            <TextBlock Text="&#xe62c;" ToolTip="62c" ></TextBlock>
+            <TextBlock Text="&#xe63c;" ToolTip="63c" ></TextBlock>
+            <TextBlock Text="&#xe64c;" ToolTip="64c" ></TextBlock>
+            <TextBlock Text="&#xe65c;" ToolTip="65c" ></TextBlock>
+            <TextBlock Text="&#xe66c;" ToolTip="66c" ></TextBlock>
+            <TextBlock Text="&#xe67c;" ToolTip="67c" ></TextBlock>
+            <TextBlock Text="&#xe68c;" ToolTip="68c" ></TextBlock>
+            <TextBlock Text="&#xe69c;" ToolTip="69c" ></TextBlock>
+
+            <TextBlock Text="&#xe60d;" ToolTip="60d" ></TextBlock>
+            <TextBlock Text="&#xe61d;" ToolTip="61d" ></TextBlock>
+            <TextBlock Text="&#xe62d;" ToolTip="62d" ></TextBlock>
+            <TextBlock Text="&#xe63d;" ToolTip="63d" ></TextBlock>
+            <TextBlock Text="&#xe64d;" ToolTip="64d" ></TextBlock>
+            <TextBlock Text="&#xe65d;" ToolTip="65d" ></TextBlock>
+            <TextBlock Text="&#xe66d;" ToolTip="66d" ></TextBlock>
+            <TextBlock Text="&#xe67d;" ToolTip="67d" ></TextBlock>
+            <TextBlock Text="&#xe68d;" ToolTip="68d" ></TextBlock>
+            <TextBlock Text="&#xe69d;" ToolTip="69d" ></TextBlock>
+
+            <TextBlock Text="&#xe60e;" ToolTip="60e" ></TextBlock>
+            <TextBlock Text="&#xe61e;" ToolTip="61e" ></TextBlock>
+            <TextBlock Text="&#xe62e;" ToolTip="62e" ></TextBlock>
+            <TextBlock Text="&#xe63e;" ToolTip="63e" ></TextBlock>
+            <TextBlock Text="&#xe64e;" ToolTip="64e" ></TextBlock>
+            <TextBlock Text="&#xe65e;" ToolTip="65e" ></TextBlock>
+            <TextBlock Text="&#xe66e;" ToolTip="66e" ></TextBlock>
+            <TextBlock Text="&#xe67e;" ToolTip="67e" ></TextBlock>
+            <TextBlock Text="&#xe68e;" ToolTip="68e" ></TextBlock>
+            <TextBlock Text="&#xe69e;" ToolTip="69e" ></TextBlock>
+
+            <TextBlock Text="&#xe60f;" ToolTip="60f" ></TextBlock>
+            <TextBlock Text="&#xe61f;" ToolTip="61f" ></TextBlock>
+            <TextBlock Text="&#xe62f;" ToolTip="62f" ></TextBlock>
+            <TextBlock Text="&#xe63f;" ToolTip="63f" ></TextBlock>
+            <TextBlock Text="&#xe64f;" ToolTip="64f" ></TextBlock>
+            <TextBlock Text="&#xe65f;" ToolTip="65f" ></TextBlock>
+            <TextBlock Text="&#xe66f;" ToolTip="66f" ></TextBlock>
+            <TextBlock Text="&#xe67f;" ToolTip="67f" ></TextBlock>
+            <TextBlock Text="&#xe68f;" ToolTip="68f" ></TextBlock>
+            <TextBlock Text="&#xe69f;" ToolTip="69f" ></TextBlock>
+        </WrapPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/Color.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/Global.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/UIcon.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/Share.xaml" />
+        
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/Calendar.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/CheckBox.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/UCheckBox.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/ComboBox.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/DataGrid.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/UButton.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/ListBox.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/ListView.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/Menu.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/PasswordBox.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/ProgressBar.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/RadioButton.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/ScrollViewer.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/Separator.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/TabControl.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/MulitFrame.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/TextBox.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/WindowBase.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/MessageBox.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/UTreeView.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/UTreeListView.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/ULoading.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/ULoadingDialog.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/Toast.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/AutoSearchBox.xaml" />
+        <ResourceDictionary Source="/UtilityControl;component/Style/Themes/Default/CheckTreeView.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

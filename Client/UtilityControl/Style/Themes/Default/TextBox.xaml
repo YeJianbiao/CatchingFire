@@ -1,0 +1,257 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:common="clr-namespace:UtilityControl.Common"
+                    xmlns:control="clr-namespace:UtilityControl.Control">
+
+    <!--TextBox默认样式-->
+    <Style TargetType="{x:Type TextBox}" x:Key="DefaultTextBox">
+        <Setter Property="ContextMenu" Value="{DynamicResource TextBoxContextMenu}" />
+        <Setter Property="SelectionBrush" Value="{DynamicResource TextSelectionBrush}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="MinHeight" Value="26" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Background" Value="{DynamicResource TextBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextForeground}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+        <Setter Property="common:ControlAttachProperty.FocusBorderBrush" Value="{DynamicResource FocusBorderBrush}" />
+        <Setter Property="common:ControlAttachProperty.MouseOverBorderBrush" Value="{DynamicResource MouseOverBorderBrush}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <!-- change SnapsToDevicePixels to True to view a better border and validation error -->
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <!--英 ['kærət]  美 ['kærət]  插入符号-->
+        <Setter Property="CaretBrush" Value="{DynamicResource TextForeground}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid x:Name="PART_Root">
+                        <Border x:Name="Bg" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                CornerRadius="{TemplateBinding common:ControlAttachProperty.CornerRadius}"
+                                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" />
+                        <Grid x:Name="PART_InnerGrid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="Auto" />
+                                <ColumnDefinition  Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition  Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <!--Label区域-->
+                            <ContentControl x:Name="Label" Margin="1" Template="{TemplateBinding common:ControlAttachProperty.LabelTemplate}"
+                                            Content="{TemplateBinding common:ControlAttachProperty.Label}" common:ControlAttachProperty.LanguageText="{TemplateBinding common:ControlAttachProperty.Label}" />
+                            <TextBlock Grid.Column="1" Style="{DynamicResource UIcon}" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="3,2,3,2" Text="{TemplateBinding common:ControlAttachProperty.UIcon}" ></TextBlock>
+                            <!--内容区域-->
+                            <ScrollViewer x:Name="PART_ContentHost" BorderThickness="0" Grid.Column="2" IsTabStop="False" Margin="2"
+                                          VerticalAlignment="Stretch" Background="{x:Null}" />
+                            <!--水印-->
+                            <TextBlock x:Name="Message" Padding="{TemplateBinding Padding}" Visibility="Collapsed"
+                                       Text="{TemplateBinding common:ControlAttachProperty.Watermark}"
+                                       common:ControlAttachProperty.LanguageText="{TemplateBinding common:ControlAttachProperty.Watermark}" Grid.Column="2"
+                                       Foreground="{TemplateBinding Foreground}" IsHitTestVisible="False" Opacity="{DynamicResource WatermarkOpacity}"
+                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="5,2,5,2" />
+                            <!--附加内容区域-->
+                            <Border x:Name="PART_AttachContent" Grid.Column="3" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                <ContentControl VerticalAlignment="Top" VerticalContentAlignment="Top" Template="{TemplateBinding common:ControlAttachProperty.AttachContent}" />
+                            </Border>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!--显示水印-->
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="">
+                            <Setter TargetName="Message" Property="Visibility" Value="Visible" />
+                            <!--<Setter TargetName="PART_AttachContent" Property="Visibility" Value="Collapsed" />-->
+                        </DataTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="{Binding Path=(common:ControlAttachProperty.MouseOverBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter  Property="BorderBrush" Value="{Binding Path=(common:ControlAttachProperty.FocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                        </Trigger>
+                        <!--不可用-->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="PART_Root" Property="Opacity" Value="{DynamicResource DisableOpacity}" />
+                        </Trigger>
+                        <!--只读时，禁用PART_AttachContent-->
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter TargetName="PART_AttachContent" Property="IsEnabled" Value="False" />
+                            <Setter TargetName="Bg" Property="Opacity" Value="{DynamicResource ReadonlyOpacity}" />
+                            <Setter TargetName="PART_ContentHost" Property="Opacity" Value="{DynamicResource ReadonlyOpacity}" />
+                            <Setter TargetName="Label" Property="Opacity" Value="{DynamicResource ReadonlyOpacity}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--TextBox包含清除Text按钮的样式-->
+    <Style TargetType="{x:Type TextBox}" x:Key="ClearButtonTextBox" BasedOn="{StaticResource DefaultTextBox}">
+        <Setter Property="common:ControlAttachProperty.AttachContent">
+            <Setter.Value>
+                <ControlTemplate>
+                    <control:UButton UIcon="&#xe60a;" Style="{DynamicResource UButton_Transparency}" IsTabStop="False" UIconMargin="0"
+                                   common:ControlAttachProperty.IsClearTextButtonBehaviorEnabled="True" Command="common:ControlAttachProperty.ClearTextCommand" 
+                                   CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type TextBox}}}"
+                               Margin="1,3,1,4" UIconSize="13" Foreground="{DynamicResource TextForeground}" Cursor="Arrow"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--TextBox包含附加属性Label的样式-->
+    <Style TargetType="{x:Type TextBox}" x:Key="LabelTextBox" BasedOn="{StaticResource DefaultTextBox}">
+        <Setter Property="common:ControlAttachProperty.LabelTemplate" >
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Border Width="60" Background="{DynamicResource TextLabelBackground}">
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="3" Text="{TemplateBinding Content}"></TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--TextBox包含附加属性Label，以及ClearText按钮的样式-->
+    <Style TargetType="{x:Type TextBox}" x:Key="LabelClearButtonTextBox" BasedOn="{StaticResource DefaultTextBox}">
+        <Setter Property="common:ControlAttachProperty.LabelTemplate" >
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Border Width="60" Background="{DynamicResource TextLabelBackground}">
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="3" Text="{TemplateBinding Content}"></TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="common:ControlAttachProperty.AttachContent">
+            <Setter.Value>
+                <ControlTemplate>
+                    <control:UButton UIcon="&#xe60a;" Style="{DynamicResource UButton_Transparency}" IsTabStop="False" UIconMargin="0"
+                               common:ControlAttachProperty.IsClearTextButtonBehaviorEnabled="True" Command="common:ControlAttachProperty.ClearTextCommand" 
+                               CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type TextBox}}}"
+                               Margin="0,3,1,4" UIconSize="13" Foreground="{DynamicResource TextForeground}" Cursor="Arrow"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LoginTextBox" TargetType="{x:Type TextBox}" BasedOn="{StaticResource ClearButtonTextBox}" >
+        <Setter Property="Height" Value="50"></Setter>
+        <Setter Property="Width" Value="350"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+        <Setter Property="common:ControlAttachProperty.CornerRadius" Value="3"></Setter>
+        <Setter Property="common:ControlAttachProperty.UIcon" Value="&#xe656;"></Setter>
+    </Style>
+
+    <!--TextBox默认样式-->
+    <Style TargetType="{x:Type TextBox}" x:Key="SignatureTextBox">
+        <Setter Property="ContextMenu" Value="{DynamicResource TextBoxContextMenu}" />
+        <Setter Property="SelectionBrush" Value="{DynamicResource TextSelectionBrush}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#D8FFFFFF" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="common:ControlAttachProperty.FocusBorderBrush" Value="Black" />
+        <Setter Property="common:ControlAttachProperty.FocusBackground" Value="White" />
+        <Setter Property="common:ControlAttachProperty.FocusForeground" Value="Black" />
+        <Setter Property="common:ControlAttachProperty.MouseOverBorderBrush" Value="DarkOliveGreen" />
+        <Setter Property="common:ControlAttachProperty.CornerRadius" Value="2" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="CaretBrush" Value="{DynamicResource TextForeground}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid x:Name="PART_Root">
+                        <Border x:Name="Bg" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                CornerRadius="{TemplateBinding common:ControlAttachProperty.CornerRadius}"
+                                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" />
+                        <Grid x:Name="PART_InnerGrid">
+                            <!--内容区域-->
+                            <ScrollViewer x:Name="PART_ContentHost" BorderThickness="0" IsTabStop="False" Margin="0" VerticalAlignment="Stretch" Background="{x:Null}" />
+                            <!--水印-->
+                            <TextBlock x:Name="Message" Padding="{TemplateBinding Padding}" Visibility="Collapsed"
+                                       Text="{TemplateBinding common:ControlAttachProperty.Watermark}"
+                                       common:ControlAttachProperty.LanguageText="{TemplateBinding common:ControlAttachProperty.Watermark}" 
+                                       Foreground="{TemplateBinding Foreground}" IsHitTestVisible="False" Opacity="0.8"
+                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="2,0" />
+                            
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!--显示水印-->
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="">
+                            <Setter TargetName="Message" Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="{Binding Path=(common:ControlAttachProperty.MouseOverBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter  Property="BorderBrush" Value="{Binding Path=(common:ControlAttachProperty.FocusBorderBrush),RelativeSource={RelativeSource Self}}"/>
+                            <Setter  Property="Background" Value="{Binding Path=(common:ControlAttachProperty.FocusBackground),RelativeSource={RelativeSource Self}}"/>
+                            <Setter  Property="Foreground" Value="{Binding Path=(common:ControlAttachProperty.FocusForeground),RelativeSource={RelativeSource Self}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--LabelOpenFileTextBox-->
+    <Style TargetType="{x:Type TextBox}" x:Key="OpenFileTextBox" BasedOn="{StaticResource ClearButtonTextBox}">
+        <!--<Setter Property="common:ControlAttachProperty.Label" Value="文件路径"/>-->
+        <Setter Property="common:ControlAttachProperty.Watermark" Value="选择文件路径"/>
+        <Setter Property="common:ControlAttachProperty.AttachContent">
+            <Setter.Value>
+                <ControlTemplate>
+                    <control:UButton UIcon="&#xe64e;" Style="{DynamicResource UButton_Transparency}" IsTabStop="False" UIconMargin="0"
+                               common:ControlAttachProperty.IsOpenFileButtonBehaviorEnabled="True" Command="common:ControlAttachProperty.OpenFileCommand" 
+                               CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type TextBox}}}"
+                               Margin="0,1,0,2"  UIconSize="18" Foreground="{DynamicResource TextForeground}" Cursor="Arrow"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--LabelOpenFolderTextBox-->
+    <Style TargetType="{x:Type TextBox}" x:Key="OpenFolderTextBox" BasedOn="{StaticResource ClearButtonTextBox}">
+        <Setter Property="common:ControlAttachProperty.Watermark" Value="选择文件夹路径"/>
+        <Setter Property="common:ControlAttachProperty.AttachContent">
+            <Setter.Value>
+                <ControlTemplate>
+                    <control:UButton UIcon="&#xe636;" Style="{DynamicResource UButton_Transparency}" IsTabStop="False" UIconMargin="0" VerticalAlignment="Center"
+                               common:ControlAttachProperty.IsOpenFolderButtonBehaviorEnabled="True" Command="common:ControlAttachProperty.OpenFolderCommand" 
+                               CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type TextBox}}}"
+                               Margin="0,1,0,2"  UIconSize="18" Foreground="{DynamicResource TextForeground}" Cursor="Arrow"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--LabelSaveFileTextBox-->
+    <Style TargetType="{x:Type TextBox}" x:Key="LabelSaveFileTextBox" BasedOn="{StaticResource ClearButtonTextBox}">
+        <!--<Setter Property="common:ControlAttachProperty.Label" Value="保存路径"/>-->
+        <Setter Property="common:ControlAttachProperty.Watermark" Value="选择文件保存路径"/>
+        <Setter Property="common:ControlAttachProperty.AttachContent">
+            <Setter.Value>
+                <ControlTemplate>
+                    <control:UButton UIcon="&#xe61a;" Style="{DynamicResource UButton_Transparency}" IsTabStop="False" UIconMargin="0"
+                               common:ControlAttachProperty.IsSaveFileButtonBehaviorEnabled="True" Command="common:ControlAttachProperty.SaveFileCommand" 
+                               CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type TextBox}}}"
+                               Margin="0,1,0,2"  UIconSize="18" Foreground="{DynamicResource TextForeground}" Cursor="Arrow"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource DefaultTextBox}"></Style>
+</ResourceDictionary>
